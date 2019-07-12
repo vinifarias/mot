@@ -1,0 +1,14 @@
+.table-container {
+  height: auto;
+  width: 700px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+table {
+  width: 100%;
+}
+
+.dialog-container {
+  max-height: 80vh;
+}

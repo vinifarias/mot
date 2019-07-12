@@ -1,0 +1,43 @@
+.form-content {
+  min-width: 300px;
+  width: 30vw;
+  z-index: 2;
+}
+
+.select-inputs {
+  display: flex;
+  position: center;
+  flex-direction: column;
+  align-content: center;
+}
+
+#btn-search {
+  float: right;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+
+.hours-info {
+  margin-top: 20px;
+  width: 30vw;
+  position: relative;
+  min-width: 200px;
+  z-index: 2;
+}
+
+#span-predicted-planned-hours {
+  margin-top: 10px;
+}
+
+span {
+  display: block;
+}
+
+#btn-details {
+  margin-top: 10px;
+  float: right;
+}
+
+#clear {
+  clear: both;
+}

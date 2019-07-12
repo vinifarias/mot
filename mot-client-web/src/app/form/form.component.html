@@ -1,0 +1,50 @@
+<mat-card class="form-content">
+  <div class="select-inputs">
+    <mat-form-field>
+      <mat-select placeholder="Module"
+                  [(value)]="selectedModule"
+                  (selectionChange)="changeOperationSelect()">
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let module of modules" [value]="module.description">
+          {{module.description}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Operation"
+                  [(value)]="selectedOperation"
+                  [disabled]="disableOperationSelect.value"
+                  (selectionChange)="changeTaskSelect()">
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let operation of operations" [value]="operation.description">
+          {{operation.description}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Task"
+                  [(value)]="selectedTask"
+                  [disabled]="disableTaskSelect.value"
+                  (selectionChange)="changeDisabledSearchBtn()">
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let task of tasks" [value]="task">
+          {{task.description}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="button-row">
+      <button id="btn-search" mat-raised-button color="primary" (click)="getPredictedPlannedHours()" [(disabled)]="disableSearchBtn">Search</button>
+    </div>
+  </div>
+</mat-card>
+<mat-card @enterLeave class="hours-info" *ngIf="predicted_planned_hours != null">
+  <h4 mat-dialog-title>Task: {{selectedTask.description}}</h4>
+  <div class="labels-hours">
+    <span id="span-predicted-planned-hours">Predicted Hours: {{predicted_planned_hours}}</span>
+  </div>
+  <button id="btn-details" mat-raised-button color="primary" (click)="openDialogTaskDetails()">Detail</button>
+  <div id="clear"></div>
+</mat-card>
